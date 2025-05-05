@@ -24,7 +24,7 @@ PORT=                  # Porta da API do bot
 ```
 npm run api
 ```
-**4. Inicie o pooling do bot separado**
+**4. Inicie o polling do bot separado**
 ```
 npm run bot
 ```
