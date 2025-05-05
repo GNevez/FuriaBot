@@ -1,5 +1,5 @@
 # 🤖 FURIA Telegram Bot
-Este é o bot oficial da Arena FURIA, desenvolvido em Node.js com TypeScript, integrado à landing page principal para envio de notificações em tempo real via API. O bot utiliza o sistema de polling do Telegram para escutar mensagens e é conectado à dashboard/admin da plataforma via uma API REST.
+Este é o bot do Challenge 1 do processo seletivo da FURIA Esports, desenvolvido em Node.js com TypeScript. O bot se conecta à dashboard da Arena FURIA (landing page) via uma API REST, utilizando polling para escutar mensagens no Telegram. Ele permite o envio de notificações personalizadas, atualizações de jogos e alertas de streamers online.
 
 ### 📦 Tecnologias Utilizadas
 - Node.js
