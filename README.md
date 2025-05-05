@@ -29,7 +29,7 @@ npm run api
 npm run bot
 ```
 
-**4. Para build e produção da API**
+**5. Para build e produção da API**
 ```
 npm run build
 npm start
