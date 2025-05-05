@@ -1,46 +1,90 @@
-# Bot da Fúria
+### 🤖 FURIA Telegram Bot
+Este é o bot oficial da Arena FURIA, desenvolvido em Node.js com TypeScript, integrado à landing page principal para envio de notificações em tempo real via API. O bot utiliza o sistema de polling do Telegram para escutar mensagens e é conectado à dashboard/admin da plataforma via uma API REST.
 
-Bot do Telegram desenvolvido com Node.js e TypeScript.
+### 📦 Tecnologias Utilizadas
+- Node.js
+- TypeScript
+- node-telegram-bot-api
+- Express
 
-## Requisitos
-
-- Node.js (versão 14 ou superior)
-- npm ou yarn
-
-## Instalação
-
-1. Clone o repositório
-2. Instale as dependências:
-```bash
+## 🚀 Como executar o projeto
+**1. Instale as dependências**
+```
 npm install
 ```
+**2. Configure as variáveis de ambiente**
+Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
-3. Crie um arquivo `.env` na raiz do projeto e adicione seu token do bot:
 ```
-TELEGRAM_BOT_TOKEN=seu_token_aqui
+TELEGRAM_BOT_TOKEN=        # Token do bot gerado pelo @BotFather  
+BOT_API_URL=  # URL da landing page/admin  
+PORT=                  # Porta da API do bot
 ```
-
-## Como executar
-
-Para desenvolvimento:
-```bash
+**3. Inicie o bot em modo desenvolvimento**
+```
 npm run dev
 ```
-
-Para produção:
-```bash
+**4. Para build e produção**
+```
 npm run build
 npm start
 ```
+## 🔌 Endpoints da API
+A API embutida no bot permite integração direta com o painel da Arena FURIA para envio de notificações aos usuários.
 
-## Comandos disponíveis
+# POST /api/enviar-mensagem
+Envia uma mensagem para um usuário via Telegram.
 
-- `/start` - Inicia o bot
-- `/help` - Mostra a lista de comandos disponíveis
+Body (JSON):
+```
+{
+  "chatId": "123456789",
+  "mensagem": "A FURIA joga hoje às 19h! Não perca!"
+}
+```
 
-## Como obter um token do bot
+# POST /api/atualizar-jogos
+Atualiza a lista de jogos do dia e notifica os usuários.
 
-1. Abra o Telegram e procure por @BotFather
-2. Inicie uma conversa e use o comando `/newbot`
-3. Siga as instruções para criar seu bot
-4. Copie o token fornecido e adicione ao arquivo `.env` 
+```
+{
+  "jogos": [
+  {
+      "horario": "19:00",
+      "adversario": "Team Liquid",
+      "campeonato": "ESL Pro League"
+    }
+  ]
+}
+```
+# POST /api/atualizar-streamers
+Recebe e envia notificações com os streamers da FURIA que estão online.
+
+```
+{
+  "streamers": [
+    {
+      "nome": "Gaules",
+      "link": "https://twitch.tv/gaules"
+    },
+    {
+      "nome": "FalleN",
+      "link": "https://twitch.tv/fallen"
+    }
+  ]
+}
+```
+## ⚙️ Funcionamento
+O bot usa polling para escutar mensagens dos usuários.
+
+A API pode ser consumida pela landing page/admin para automatizar os alertas de jogos e streamers.
+
+A estrutura do código é modular, facilitando expansão e manutenção.
+
+## 👨‍💻 Autor
+**Guilherme Neves M Ferraz**
+**📧 guilhermemferraz@hotmail.com**
+**🔗 LinkedIn: *https://www.linkedin.com/in/guilherme-neves-a749052a2/***
+
+## 📄 Licença
+Este projeto é open-source e está disponível sob a licença MIT.
