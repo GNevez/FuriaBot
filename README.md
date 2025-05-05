@@ -20,11 +20,16 @@ TELEGRAM_BOT_TOKEN=        # Token do bot gerado pelo @BotFather
 BOT_API_URL=  # URL da landing page/admin  
 PORT=                  # Porta da API do bot
 ```
-**3. Inicie o bot em modo desenvolvimento**
+**3. Inicie a API em modo desenvolvimento**
 ```
-npm run dev
+npm run api
 ```
-**4. Para build e produção**
+**4. Inicie o pooling do bot separado**
+```
+npm run bot
+```
+
+**4. Para build e produção da API**
 ```
 npm run build
 npm start
